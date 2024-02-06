@@ -2,4 +2,37 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
-return {}
+return {
+  -- live markdown viewin
+  { "itspriddle/vim-marked" },
+
+  -- better notifications
+  {
+    "rcarriga/nvim-notify",
+    config = function()
+      vim.notify = require("notify")
+      require("notify").setup({
+        timeout = 2000,
+      })
+    end,
+  },
+
+  -- pretty diagnostics, references, telescope results, quickfix and location lists
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+
+  -- file tree
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("nvim-tree").setup({})
+      vim.keymap.set("n", "<C-\\>", "<cmd> NvimTreeToggle <CR>", {})
+    end,
+  },
+}
