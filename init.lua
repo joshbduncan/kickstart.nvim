@@ -66,6 +66,8 @@ require('lazy').setup({
 
       -- Adds LSP completion capabilities
       'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-nvim-lua',
+      'prabirshrestha/vim-lsp',
       'hrsh7th/cmp-path',
 
       -- Adds a number of user-friendly snippets
@@ -550,6 +552,7 @@ cmp.setup {
   },
   sources = {
     { name = 'nvim_lsp' },
+    { name = 'nvim_lua' },
     { name = 'luasnip' },
     { name = 'path' },
   },

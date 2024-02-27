@@ -48,4 +48,6 @@ vim.o.showtabline = true
 vim.o.smartindent = true
 vim.o.softtabstop = 4
 vim.o.tabstop = 4
+vim.o.wrap = false
+
 vim.g.python3_host_prog = "python3"
