@@ -3,6 +3,9 @@
 --
 -- See the kickstart.nvim README for more information
 return {
+  -- Additional lua configuration, makes nvim stuff amazing!
+  { 'folke/neodev.nvim' },
+
   -- live markdown viewin
   { "itspriddle/vim-marked" },
 
@@ -35,4 +38,7 @@ return {
       vim.keymap.set("n", "<C-\\>", "<cmd> NvimTreeToggle <CR>", {})
     end,
   },
+
+  -- Useful plugin to show you pending keybinds.
+  { 'folke/which-key.nvim', opts = {} },
 }
