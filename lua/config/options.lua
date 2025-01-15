@@ -1,59 +1,42 @@
--- [[ Setting options ]]
--- See `:help vim.o`
+local opt = vim.opt
 
--- NOTE: You should make sure your terminal supports this
-vim.opt.termguicolors = true
--- NOTE: You can change these options as you wish!
-
--- Set highlight on search
-vim.o.hlsearch = false
-
--- Make line numbers default
-vim.wo.number = true
-
--- Enable mouse mode
-vim.o.mouse = 'a'
-
--- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
-
--- Enable break indent
-vim.o.breakindent = true
-
--- Save undo history
-vim.o.undofile = true
-
--- Case-insensitive searching UNLESS \C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
-
--- Keep signcolumn on by default
-vim.wo.signcolumn = 'yes'
-
--- Decrease update time
-vim.o.updatetime = 250
-vim.o.timeoutlen = 300
-
--- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
-
--- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = true
-
--- MEMEME
-vim.o.expandtab = true
-vim.o.numberwidth = 4
-vim.o.relativenumber = true
-vim.o.shiftwidth = 4
-vim.o.smartindent = true
-vim.o.softtabstop = 4
-vim.o.tabstop = 4
-vim.o.wrap = false
-
-vim.o.showtabline = 1
-vim.o.smartindent = true
-vim.o.softtabstop = 4
-vim.o.tabstop = 4
-vim.g.python3_host_prog = "python3"
+-- opt.breakindent = true -- keep things aligned
+opt.clipboard = "unnamedplus" -- sync clipboard between os and neovim
+opt.completeopt = "menu,menuone,noselect" -- opt completeopt to have a better completion experience
+opt.confirm = true -- confirm to save changes before exiting
+opt.cursorline = true -- show which line your cursor is on
+opt.expandtab = true -- use spaces instead of tabs
+opt.formatoptions = "jcroqlnt"
+opt.grepformat = "%f:%l:%c:%m"
+opt.grepprg = "rg --vimgrep"
+opt.ignorecase = true -- case-insensitive searching unless \c or capital in search
+opt.inccommand = "nosplit"
+opt.jumpoptions = "view"
+opt.mouse = "a" -- enable mouse mode, can be useful for resizing splits for example!
+opt.number = true -- enable line numbers (relative)
+opt.numberwidth = 4
+opt.pumblend = 10 -- Popup blend
+opt.pumheight = 10 -- Maximum number of entries in a popup
+opt.relativenumber = true
+opt.scrolloff = 4 -- minimal number of screen lines to keep above and below the cursor
+opt.shiftround = true -- Round indent
+opt.shiftwidth = 4 --  Size of an indent
+opt.showmode = false -- don"t show the mode, since it"s already in the status line
+opt.sidescrolloff = 8
+opt.signcolumn = "yes" -- keep signcolumn on by default
+opt.smartcase = true -- Don't ignore case with capitals
+opt.smartindent = true -- Insert indents automatically
+opt.smoothscroll = true
+opt.spelllang = { "en" }
+opt.softtabstop = 4
+opt.splitbelow = true -- Put new windows below current
+opt.splitright = true -- Put new windows right of current
+opt.tabstop = 4 -- Number of spaces tabs count for
+opt.termguicolors = true
+opt.timeoutlen = 300
+opt.undofile = true
+opt.undolevels = 10000
+opt.updatetime = 250 -- Save swap file and trigger CursorHold
+opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
+opt.wildmode = "longest:full,full" -- Command-line completion mode
+opt.wrap = false
